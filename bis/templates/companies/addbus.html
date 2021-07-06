@@ -1,0 +1,72 @@
+{% extends 'companies/base.html' %} {% block head_title %}BonAuto-mobile | Ajouter Auto-mobile(s){% endblock %} {% block head_meta %} Ajouter Auto-mobile(s) | Auto-mobileHaiti est la solution a votre moyen de voyage, faite confiance a Auto-mobileHaiti son service est simple et securiser
+{% endblock %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+<div class="col-md-12 grid-margin">
+    <div class="card">
+        <div class="card-body">
+            <br>
+            <h3>{% if object %}Auto-mobile "{{object.name}}" Modification{%else%}
+             {% if '/Ajouter/Taxi/' == request.path %}Ajouter Taxi{%else%}Ajouter Bus{%endif%}{%endif%}</h3>
+            <hr>
+            <form method="post" enctype="multipart/form-data">
+                <p class="alert alert-info">Merci!!, BusHaiti.</p>
+                {% if '/Ajouter/Taxi/' == request.path %}
+                <input type="checkbox" name="is_taxi" checked="true" class="checkboxinput form-check-input" id="id_is_taxi" hidden>
+                {% csrf_token %} 
+                <div id="div_id_name" class="form-group"> <label for="id_name" class=" requiredField">
+                    Name<span class="asteriskField">*</span> </label>
+                    <div class=""> <input type="text" name="name" maxlength="130" class="textinput textInput form-control" required id="id_name"> </div>
+                </div>
+                <div id="div_id_source" class="form-group"> <label for="id_source" class=" requiredField">
+                    Depart<span class="asteriskField">*</span> </label>
+                    <div class=""> <select name="source" class="select form-control" required id="id_source"> <option value="" selected>---------</option> <optgroup label="Département de l’Ouest"> <option value="Port-au-Prince, Haiti">Port-au-Prince</option> <option value="Turgeau, Haiti">Turgeau</option> <option value="6119">Martissant et Fontamara</option> <option value="Carrefour, Haïti">Carrefour</option> <option value="6145">Thomassin</option> <option value="6150">Kenscoff</option> </optgroup> <optgroup label="Département de l’Artibonite"> <option value="Gonaives, Haiti">Gonaïves</option> <option value="Ennery, Haiti">Ennery</option> <option value="Saint-Marc, Haiti">Saint-Marc</option> <option value="4130">L’Estère</option> <option value="4210">Gros Morne</option> <option value="4220">Terre Neuve</option> <option value="4230">Anse Rouge</option> <option value="4311">Montrouis</option> <option value="4410">Dessalines / Marchand</option> <option value="4440">Desdunes</option> <option value="4510">Marmelade</option> <option value="4520">Saint Michel de l’Attalaye</option> </optgroup> <optgroup label="Département de la Grande Anse"> <option value="Jeremie, Haiti">Jérémie</option> </optgroup> <optgroup label="Département de Nippes"> <option value="7410">Miragoâne</option> <option value="7411">Saint Michel du Sud</option> </optgroup> <optgroup label="Département du Centre"> <option value="Hinche, Haiti">Hinche</option> <option value="5120">Maïssade</option> <option value="5210">Mirebalais</option> <option value="5220">Saut d’Eau</option> </optgroup> <optgroup label="Département du Nord"> <option value="Cap-Haitien, Haiti">Cap-Haïtien</option> <option value="1710">Plaisance</option> </optgroup> <optgroup label="Département du Nord-Est"> <option value="2210">Ouanaminthe</option> </optgroup> <optgroup label="Département du Nord-Ouest"> <option value="3110">Port-de-Paix</option> <option value="3120">La Tortue</option> </optgroup> <optgroup label="Département du Sud"> <option value="8110">Cayes</option> </optgroup> <optgroup label="Département du Sud-Est"> <option value="9110">Jacmel</option> </optgroup>
+                </select> </div>
+                </div>
+                <div id="div_id_destination" class="form-group"> <label for="id_destination" class=" requiredField">
+                    Destination<span class="asteriskField">*</span> </label>
+                    <div class=""> <select name="destination" class="select form-control" required id="id_destination"> <option value="" selected>---------</option> <optgroup label="Département de l’Ouest"> <option value="Port-au-Prince, Haiti">Port-au-Prince</option> <option value="Turgeau, Haiti">Turgeau</option> <option value="6119">Martissant et Fontamara</option> <option value="Carrefour, Haïti">Carrefour</option> <option value="6145">Thomassin</option> <option value="6150">Kenscoff</option> </optgroup> <optgroup label="Département de l’Artibonite"> <option value="Gonaives, Haiti">Gonaïves</option> <option value="Ennery, Haiti">Ennery</option> <option value="Saint-Marc, Haiti">Saint-Marc</option> <option value="4130">L’Estère</option> <option value="4210">Gros Morne</option> <option value="4220">Terre Neuve</option> <option value="4230">Anse Rouge</option> <option value="4311">Montrouis</option> <option value="4410">Dessalines / Marchand</option> <option value="4440">Desdunes</option> <option value="4510">Marmelade</option> <option value="4520">Saint Michel de l’Attalaye</option> </optgroup> <optgroup label="Département de la Grande Anse"> <option value="Jeremie, Haiti">Jérémie</option> </optgroup> <optgroup label="Département de Nippes"> <option value="7410">Miragoâne</option> <option value="7411">Saint Michel du Sud</option> </optgroup> <optgroup label="Département du Centre"> <option value="Hinche, Haiti">Hinche</option> <option value="5120">Maïssade</option> <option value="5210">Mirebalais</option> <option value="5220">Saut d’Eau</option> </optgroup> <optgroup label="Département du Nord"> <option value="Cap-Haitien, Haiti">Cap-Haïtien</option> <option value="1710">Plaisance</option> </optgroup> <optgroup label="Département du Nord-Est"> <option value="2210">Ouanaminthe</option> </optgroup> <optgroup label="Département du Nord-Ouest"> <option value="3110">Port-de-Paix</option> <option value="3120">La Tortue</option> </optgroup> <optgroup label="Département du Sud"> <option value="8110">Cayes</option> </optgroup> <optgroup label="Département du Sud-Est"> <option value="9110">Jacmel</option> </optgroup>
+                </select> </div>
+                </div>
+                <div id="div_id_prix" class="form-group"> <label for="id_prix" class=" requiredField">
+                    Prix<span class="asteriskField">*</span> </label>
+                    <div class=""> <input type="number" name="prix" step="any" class="numberinput form-control" required id="id_prix"> </div>
+                </div>
+                <div id="div_id_description" class="form-group"> <label for="id_description" class=" requiredField">
+                    Description<span class="asteriskField">*</span> </label>
+                    <div class=""> <textarea name="description" cols="40" rows="10" class="textarea form-control" required id="id_description">
+                </textarea> </div>
+                </div>
+                <div id="div_id_image" class="form-group"> <label for="id_image" class=" requiredField">
+                    Image<span class="asteriskField">*</span> </label>
+                    <div class=""> <input type="file" name="image" accept="image/*" class="clearablefileinput form-control-file" required id="id_image"> </div>
+                </div>
+                <div id="div_id_photo_1" class="form-group"> <label for="id_photo_1" class="">
+                    image 1
+                </label>
+                    <div class=""> <input type="file" name="photo_1" accept="image/*" class="clearablefileinput form-control-file" id="id_photo_1"> </div>
+                </div>
+                <div id="div_id_photo_2" class="form-group"> <label for="id_photo_2" class="">
+                    image 2
+                </label>
+                    <div class=""> <input type="file" name="photo_2" accept="image/*" class="clearablefileinput form-control-file" id="id_photo_2"> </div>
+                </div>
+                <div id="div_id_photo_3" class="form-group"> <label for="id_photo_3" class="">
+                    image 3
+                </label>
+                    <div class=""> <input type="file" name="photo_3" accept="image/*" class="clearablefileinput form-control-file" id="id_photo_3"> </div>
+                </div>
+                <div id="div_id_photo_4" class="form-group"> <label for="id_photo_4" class="">
+                    image 4
+                </label>
+                    <div class=""> <input type="file" name="photo_4" accept="image/*" class="clearablefileinput form-control-file" id="id_photo_4"> </div>
+                </div>
+                {% else %}
+                {% csrf_token %} 
+                {{form|crispy}}
+                {% endif %}
+                <button type="submit" class="btn btn-primary btn-block">sauvegarder</button>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+{% endblock %}

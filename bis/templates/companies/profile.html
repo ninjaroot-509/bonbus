@@ -1,0 +1,40 @@
+{% extends 'companies/base.html' %} {% block head_title %}BusHaiti | {{u}} Compte{% endblock %} {% block head_meta %} {{u}} Profile | BusHaiti est la solution a votre moyen de voyage, faite confiance a BusHaiti son service est simple et securiser {%endblock%}
+{% load static %} {% load i18n %} {% block content %}
+
+<div class="main-panel" style="width: 100%;">
+    <div class="content-wrapper">
+        <div class="row">
+
+                    <div class="col-xl-8 m-auto order-xl-2 mb-5 mb-xl-0">
+                      <div class="card card-profile shadow">
+                        <div style="text-align: center;padding-top: 25px">
+                            {% if u.profile.photo %}
+                          <img src="{{ u.profile.photo.url }}" class="rounded-circle" width="160px" height="160px">
+                          {% endif %}
+                        </div>
+                        <div class="card-body pt-0 pt-md-4">
+                          <div class="text-center">
+                            <h3>
+                              {{ u }}                
+                            </h3>   
+                            <p>{{ u.profile.bio }}</p>
+                            <hr/>
+                            <h5><span>Nom</span>: {{ u.last_name }}</h5>
+                            <hr/>
+                            <h5><span>Prenom</span>: {{ u.first_name }}</h5>
+                            <hr/>
+                            <!-- <h5><span>Apartement addresse</span>: {{ u.profile.apartement_addresse }}</h5>
+                            <hr/> -->
+                            <h5><span>Numero</span>: {{ u.profile.numero }}</h5>
+                            <hr/>
+                            {% if request.user == u %}
+                            <a class="btn btn-info" href="{% url 'profile-update' %}">Edit Profile</a>
+                            {% endif %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'companies/base.html' %} {% block head_title %}BusHaiti | Transaction(s){% endblock %} {% block head_meta %} Vous pouvez creer votre propre portefeuille sur BusHaiti | BusHaiti est la solution a votre moyen de voyage, faite confiance
+a BusHaiti son service est simple et securiser {% endblock %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+
+<div class="main-panel" style="width: 100%;">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12 d-flex align-items-stretch grid-margin">
+                <div class="row flex-grow">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Depot depuit votre compte moncash sur votre portefeuille</h4>
+                                <!-- <p class="card-description"> Basic form layout </p> -->
+                                <form class="forms-sample" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend bg-primary border-primary">
+                                                <span class="input-group-text bg-transparent text-white">HTG</span>
+                                            </div>
+                                            <input type="number" class="form-control" name="montant" id="id_montant" required placeholder="Montant" aria-label="Montant (to the nearest Gourdes)">
+                                            <div class="input-group-append bg-primary border-primary">
+                                                <span class="input-group-text bg-transparent text-white">.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-success mr-2">Continuer</button>
+                                    <a href="javascript:history.go(-1)" class="btn btn-light">Annuler</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

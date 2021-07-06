@@ -1,0 +1,99 @@
+{% extends 'bis/base.html' %} {% block title %}BusHaiti | Rechercher Bus {% endblock %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+
+<div class="rt-breadcump rt-breadcump-height with-logn-height">
+    <div class="rt-page-bg rtbgprefix-cover" style="background-image: url({% static 'bis/images/backgrounds/bredcump.png' %})">
+    </div>
+    <!-- /.rt-page-bg -->
+    <div class="container">
+        <div class="row rt-breadcump-height with-logn-height">
+            <div class="col-12">
+                <div class="breadcrumbs-content">
+                    <h3>Rechercher Bus</h3>
+                    <div class="breadcrumbs">
+                        <span class="divider"><i class="icofont-home"></i></span>
+                        <a href="#" title="Acceuil">Acceuil</a>
+                        <span class="divider"><i class="icofont-simple-right"></i></span> Rechercher Bus
+
+                    </div>
+                    <!-- /.breadcrumbs -->
+                </div>
+                <!-- /.breadcrumbs-content -->
+            </div>
+            <!-- /.col-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+    <div class="bredcump-search">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="rt-banner-searchbox flight-search wow fade-in-bottom" data-wow-duration="1s" data-wow-delay="1s">
+                        <div class="tab-content" id="myTabContent">
+
+                            <div class="tab-pane  show active" id="rt-item_a_four" role="tabpanel" aria-labelledby="rt-item_a_four">
+                                    <form action="{% url 'passengers:findbus' %}" method="get">
+                                        <div class="rt-input-group">
+                                            <div class="single-input  col-rt-in-3">
+                                                <input type="text" class="form-control" name="source" id="search_input" placeholder="Votre position actuel..." />
+                                            </div>
+                                            <!-- /.single-input -->
+                                            <div class="single-input  col-rt-in-3">
+                                                <input type="text" class="form-control" name="destination" id="search_input2" placeholder="Votre destination..." />
+                                            </div>
+                                            
+                                            <div class="single-input  col-rt-in-3">
+                                                <input type="text" class="form-control rt-date-picker has-icon" name="date_depart" placeholder="Date de depart">
+                                                <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
+                                            </div>
+                                           
+                                            <!-- /.single-input -->
+                                            <div class="single-input  col-rt-in-3">
+                                                <button type="submit" style="width: 100%"><i class="icofont-search"></i></button>
+                                            </div>
+                                            <!-- /.single-input -->
+                                        </div>
+                                        <!-- /.rt-input-group -->
+                                    </form>
+                                <!-- ./ form -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.rt-banner-searchbox -->
+
+
+                    <!-- <ul class="nav serachnavs wow fade-in-bottom" id="rtMultiTab" role="tablist" data-wow-duration="1.5s" data-wow-delay="1.5s">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link active" id="third-tab" data-target="#rt-item_b_thrid" data-secondary="#rt-item_a_third" data-toggle="tab" href="#third" role="tab" aria-controls="third-tab" aria-selected="false">
+                                <i class="icofont-car-alt-4"></i>
+                                <span>Bus</span>
+                            </a>
+                        </li>
+                    </ul> -->
+
+                </div>
+                <!-- /.col-lg-10 -->
+                <div class="col-xl-12">
+                    
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+</div>
+<!-- /.rt-bredcump -->
+
+
+
+
+
+
+
+<div class="spacer-bottom"></div>
+
+{% endblock %}
+{% block script1 %}
+{% endblock %}

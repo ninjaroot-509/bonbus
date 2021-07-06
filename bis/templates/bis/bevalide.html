@@ -1,0 +1,19 @@
+{% extends 'bis/base.html' %} {% block title %}BusHaiti | Error de compte {% endblock %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+
+<div class="section-title-spacer"></div>
+
+<section class="404-content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <img src="{% static 'bis/images/all-img/abt_vec_2.png' %}" alt="error compte image" class="rt-mb-30" draggable="false">
+                    <h3 class="rt-semiblod rt-mb-15">
+                        Oups ... d&eacute;sol&eacute; {{user.username}} votre compte est suspendu!
+                    </h3>
+                    <p class="rt-mb-30">Votre compte est Inactive!? <br /> c'est une mesure de sécurité, veuillez patientez le tant qu'on verifie vos informations ou nous contactez pour résoudre cette énigme.</p>
+                    <a href="{% url 'contact' %}" class="rt-btn rt-gradient pill text-uppercase">Nous Contactez</a>
+            </div><!-- ./column -->
+        </div><!-- ./row -->
+    </div><!-- ./ copntainer -->
+</section>
+{% endblock %}

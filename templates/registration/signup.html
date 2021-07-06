@@ -1,0 +1,40 @@
+{% extends 'bis/base.html' %} {% block title %}BonBus | Type compte{% endblock title %} {% load static %} {% block content %}
+<div class="spacer-top"></div><!-- /.spacer-bottom -->
+<div class="spacer-top"></div><!-- /.spacer-bottom -->
+<section class="works-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 text-center mx-auto text-center">
+                <div class="rt-section-title-wrapper">
+                    <h2 class="rt-section-title">
+                        <span>BusHaiti</span>
+                        Type Compte
+                    </h2><!-- /.rt-section-title -->
+                    <p>Choisissez votre type compte pour l'inscription.</p>
+                </div><!-- /.rt-section-title-wrapper- -->
+            </div><!-- /.col-lg-12 -->
+        </div><!-- /.row -->
+        <div class="section-title-spacer"></div><!-- /.section-title-spacer -->
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mx-auto text-center">
+                <div class="services-box-2 wow fade-in-bottom">
+                    <div class="services-thumb">
+                        <a href="{% url 'passenger_signup' %}"><img src="{% static 'bis/images/all-img/help-icon-1.png' %}" alt="service-icons" draggable="false"></a>
+                    </div><!-- /.services-thumb -->
+                    <a href="{% url 'passenger_signup' %}"><h4>Passager</h4></a>
+                </div><!-- /.services-box-2 -->
+            </div><!-- /.col-lg-3 -->
+            
+            <div class="col-lg-3 col-md-6 mx-auto text-center">
+                <div class="services-box-2 wow fade-in-bottom" data-wow-duration="2s">
+                    <div class="services-thumb">
+                        <a href="{% url 'company_signup' %}"><img src="{% static 'bis/images/all-img/help-icon-4.png' %}" alt="service-icons" draggable="false"></a>
+                    </div><!-- /.services-thumb -->
+                    <a href="{% url 'company_signup' %}"><h4>Companie</h4></a>
+                </div><!-- /.services-box-2 -->
+            </div><!-- /.col-lg-3 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section>
+
+{% endblock %}

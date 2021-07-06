@@ -1,0 +1,66 @@
+{% extends 'companies/base.html' %} {% block head_title %}BusHaiti | Mon Compte{% endblock %} {% block head_meta %} Mon Profile | BusHaiti est la solution a votre moyen de voyage, faite confiance a BusHaiti son service est simple et securiser {%endblock%}
+{% load static %} {% load i18n %} {% block content %}
+
+<div class="main-panel" style="width: 100%;">
+    <div class="content-wrapper">
+        <div class="row">
+
+                    <div class="col-lg-6 grid-margin stretch-card">
+                      <div class="card card-profile shadow">
+                        <div style="text-align: center;padding-top: 25px">
+                                {% if request.user.profile.photo %}
+                              <img src="{{ request.user.profile.photo.url }}" class="rounded-circle" width="160px" height="160px">
+                              {% endif %}
+                        </div>
+                        <div class="card-body pt-0 pt-md-4">
+                          <div class="text-center">
+                            <h3>
+                              {{ request.user }}        
+                            </h3>   
+                            <p>{{ request.user.profile.bio }}</p>
+                            <hr/>
+                            <h5><span>Nom</span>: {{ request.user.last_name }}</h5>
+                            <hr/>
+                            <h5><span>Prenom</span>: {{ request.user.first_name }}</h5>
+                            <hr/>
+                            <!-- <h5><span>Apartement addresse</span>: {{ request.user.profile.apartement_addresse }}</h5>
+                            <hr/> -->
+                            <h5><span>Numero</span>: {{ request.user.profile.numero }}</h5>
+                            <hr/>
+                            <a class="btn btn-info" href="{% url 'profile-update' %}">Edit Profile</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-lg-6 grid-margin stretch-card">
+                      <div class="card card-profile shadow">
+                        <div style="text-align: center;padding-top: 25px">
+                            <img src="{% static 'img/wallet.png' %}" width="160px" height="160px">
+                        </div>
+                        <div class="card-body pt-0 pt-md-4">
+                          <div class="text-center">
+                            {% if request.user.wallet %}
+                            <h2>{{request.user.wallet.montant}} Gourde{% if request.user.wallet.montant > 1 %}s{% endif %}</h2>
+                            <p>Ballances</p>
+                            <div class="template-demo">
+                                <a href="{% url 'passengers:depot_moncash' %}" class="btn btn-success btn-fw"> Mes Transactions</a>
+                            </div>
+                            
+                            <div class="template-demo">
+                                <a href="{% url 'passengers:depot' %}" class="btn btn-primary btn-fw">Recharger mon compte</a>
+                            </div><br>
+                            {% else %}
+                            <p class="alert alert-info">Vous n'avez pas encore créé de portefeuille</p>
+                            <div class="template-demo">
+                                <a href="{% url 'passengers:create-wallet' %}" class="btn btn-primary btn-fw">Creer une portefeuille</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

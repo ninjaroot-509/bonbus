@@ -1,0 +1,48 @@
+{% extends 'companies/base.html' %} {% block head_title %}BusHaiti | Listes transaction(s){% endblock %} {% block head_meta %} Mon Profile | BusHaiti est la solution a votre moyen de voyage, faite confiance a BusHaiti son service est simple et securiser {%endblock%}
+{% load static %} {% load i18n %} {% block content %}
+<div class="main-panel" style="width: 100%;">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Mes Listes de depots effectuees</h4>
+                        <div class="alert alert-info alert-dismissible fade show" role="alert">
+                            hello {{ user.username }}, j'espere que vous allez bien!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <thead>
+                                <tr>
+                                    <th> Utilisateur </th>
+                                    <th> Montant </th>
+                                    <th> Progress </th>
+                                    <th> Date </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for wallet in wallets %}
+                                <tr>
+                                    <td> {{wallet.user}} </td>
+                                    <td> {{wallet.montant}} </td>
+                                    <td>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td> {{wallet.date}} </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

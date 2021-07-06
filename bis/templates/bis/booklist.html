@@ -1,0 +1,83 @@
+{% extends 'companies/base.html' %} {% load crispy_forms_tags %} {% block content %}
+<div class="main-panel" style="width: 100%;">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Listes des Autobus réservés</h4>
+                        <div class="alert alert-info alert-dismissible fade show" role="alert">
+                            hello {{ user.username }}, j'espere que vous allez bien!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <table class="table table-bordered table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th title="">Nom </th>
+                                    <th title=""> Prenom </th>
+                                    <th title=""> Type </th>
+                                    <th title=""> Identifications </th>
+                                    <th>Code_Transactions</th>
+                                    <th title="Sa Source"> Source </th>
+                                    <th title="Son Destination"> Destination </th>
+                                    <th>Prix</th>
+                                    <th>Payer le</th>
+                                    <th> Dates et Heures de depart </th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in book_list %}
+                                <tr>
+                                    <td>
+                                        <div class="progress">
+                                          <div class="progress-bar bg-{% if row.utiliser == False %}warning{% elif row.utiliser == True %}success{%else%}danger{%endif%}" role="progressbar" {% if row.utiliser == False %} style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" {% elif row.utiliser == True %} style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" {% else %} {% endif %}></div>
+                                        </div>
+                                    </td>
+                                    <td>{{row.nom}}</td>
+                                    <td><a>{{row.prenom}}</a></td>
+                                    <td>{{row.get_id_type_display}}</td>
+                                    <td>{{row.id_number}}</td>
+                                    <td><b>{{row.code}}</b></td>
+                                    <td>{{ row.source}}</td>
+                                    <td>{{ row.destination}}</td>
+                                    <td>{{row.prix}} Gourdes</td>
+                                    <td>{{row.date}}</td>
+                                    <td>{{row.date_depart}} &agrave; {{row.time}}</td>
+                                    <td>
+                                        <div class="col-sm-6 col-md-4 col-lg-3">
+                                            <a href="http://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://www.bushaiti.com/rechercher-Reservation/?q={{row.code}}" style="color:#5a33ff; font-size:30px;" target="_blank"><i class="mdi mdi-eye"></i></a>
+                                            <a href="" style="color:red; font-size:30px;"><i class="mdi mdi-delete"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!--<div class="card-body">-->
+                        <!--    <form action="{% url 'passengers:cancellings' %}" method="post">-->
+                        <!--        {% csrf_token %}-->
+                        <!--        <fieldset class="form-group">-->
+                        <!--            <legend class="border-bottom mb-4">Cancel Booking</legend>-->
+                        <!--            {{ form|crispy }}-->
+                        <!--        </fieldset>-->
+                        <!--        <div>-->
+                        <!--            <input name='bus_id' class="form-control" type="number" id="example-email-input" placeholder="Enter ID of the Bus to Cancel from table above">-->
+                        <!--        </div>-->
+                        <!--        <div class="form-group">-->
+                        <!--            <button class="btn btn-outline-info" type="submit">Cancel</button>-->
+                        <!--        </div>-->
+                        <!--        {{error}}-->
+                        <!--    </form>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

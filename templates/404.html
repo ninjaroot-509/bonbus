@@ -1,0 +1,19 @@
+{% extends 'bis/base.html' %} {% block title %}BusHaiti | Error 404 {% endblock %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+
+<div class="section-title-spacer"></div>
+
+<section class="404-content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <img src="{% static 'bis/images/all-img/404.png' %}" alt="404 image" class="rt-mb-30" draggable="false">
+                    <h3 class="rt-semiblod rt-mb-15">
+                        Oups ... On dirait que vous êtes perdu!
+                    </h3>
+                    <p class="rt-mb-30">La page que vous recherchiez n’existe pas.</p>
+                    <a href="javascript:history.go(-1);" class="rt-btn rt-gradient pill text-uppercase">RETOURNER</a>
+            </div><!-- ./column -->
+        </div><!-- ./row -->
+    </div><!-- ./ copntainer -->
+</section>
+{% endblock %}

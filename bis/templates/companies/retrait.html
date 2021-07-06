@@ -1,0 +1,59 @@
+{% extends 'sellers/base.html' %} {% block head_title %}HTbonmache | Faires des retrait(s){% endblock %} {% block head_meta %} Vous pouvez meme faire des retrait depuis votre compte htbonmache | HTbonmache est la solution a votre moyen d'achat et vente,
+faite confiance a htbonmache son service est simple et securiser {% endblock %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+
+<div class="main-panel" style="width: 100%;">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12 d-flex align-items-stretch grid-margin">
+                <div class="row flex-grow">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Retrait en cash</h4>
+                                <!-- <p class="card-description"> Basic form layout </p> -->
+                                <form class="forms-sample" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend bg-primary border-primary">
+                                                <span class="input-group-text bg-transparent">
+                                              <i class="mdi mdi-shield-outline text-white"></i>
+                                            </span>
+                                            </div>
+                                            <input type="password" class="form-control" name="password" id="id_password" required placeholder="Password" aria-label="Password" aria-describedby="Password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend bg-primary border-primary">
+                                                <span class="input-group-text bg-transparent text-white">HT</span>
+                                            </div>
+                                            <input type="number" class="form-control" name="montant" id="id_montant" required placeholder="Montant" aria-label="Montant (to the nearest Gourdes)">
+                                            <div class="input-group-append bg-primary border-primary">
+                                                <span class="input-group-text bg-transparent text-white">.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend bg-primary border-primary">
+                                                <span class="input-group-text bg-transparent">
+                                                  <i class="mdi mdi-menu text-white"></i>
+                                                </span>
+                                            </div>
+                                            <input type="number" class="form-control" name="moncash_numero" id="id_moncash_numero" required placeholder="Entrer votre numero de moncash" aria-label="Numero (to the nearest Gourdes)">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-success mr-2">Continue</button>
+                                    <a href="{% url 'core:home' %}"><button class="btn btn-light">Annuler</button></a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

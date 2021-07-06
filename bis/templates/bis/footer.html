@@ -1,0 +1,174 @@
+{% load static %}
+<!-- !============= Footer Area Start ===========! -->
+<section class="rt-site-footer" data-scrollax-parent="true">
+    <div class="rt-shape-emenetns-1" style="background-image: url({% static 'bis/images/shape-elements/shape-4.png' %})" data-scrollax="properties: { translateY: '340px' }"></div>
+    <!-- /.rt-shape-emenetns-1 -->
+    <div class="footer-top rtbgprefix-cover" style="background-image: url({% static 'bis/images/backgrounds/footerbg.png' %})">
+        <div class="footer-subscripbe-box wow fade-in-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-10 mx-auto text-center">
+                        <div class="rt-section-title-wrapper text-white">
+                            <h2 class="rt-section-title">
+                                <span>Newsletter</span> Recevez les dernières nouvelles
+                            </h2>
+                            <!-- /.rt-section-title -->
+                            <p>
+                                Recevez les dernières inspirations et offres de voyage Bushaiti tous les deux mois avec votre e-mail. Vous pouvez vous désinscrire à tout moment. Votre vie privée et vos informations personnelles seront traitées.
+                            </p>
+                        </div>
+                        <!-- /.rt-section-title-wrapper -->
+                    </div>
+                    <!-- /.col-lg-7 -->
+                </div>
+                <!-- /.row -->
+                <div class="section-title-spacer"></div>
+                <!-- /.section-title-spacer -->
+                <div class="row">
+                    <div class="col-lg-7 mx-auto">
+                        <div class="input-group mb-5">
+                            <input type="text" class="form-control" placeholder="Enter your email address" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn" type="submit" id="button-addon2">Abonnez-vous</button>
+                            </div>
+                        </div>
+                        <!-- end input gorup -->
+                    </div>
+                    <!-- /.col-lg-7 -->
+                </div>
+                <!-- /.row -->
+                <div class="rt-dot-divider"></div>
+                <!-- /.rt-dot-divider -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.footer-subscripbe-box -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="rt-single-widget wow fade-in-bottom" data-wow-duration="1s">
+                        <h3 class="rt-footer-title">Information d'entreprise</h3>
+                        <!-- /.rt-footer-title -->
+                        <ul class="rt-usefulllinks">
+                            <li>
+                                <a href="{% url 'about' %}">À propos de nous</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'contact' %}">Contactez Nous</a>
+                            </li>
+                            <li>
+                                <a href="#">Garantie d'authenticité</a>
+                            </li>
+                            <li>
+                                <a href="#">Avis des clients</a>
+                            </li>
+                            <li>
+                                <a href="#">Politique de confidentialité</a>
+                            </li>
+                            <li>
+                                <a href="#">Business License</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <!-- /.rt-single-widge -->
+                </div>
+                <!-- /.col-lg-3-->
+                <div class="col-lg-3 col-md-6">
+                    <div class="rt-single-widget wow fade-in-bottom" data-wow-duration="1.5s">
+                        <h3 class="rt-footer-title">Travaille avec nous</h3>
+                        <ul class="rt-usefulllinks">
+                            <li><a href="#">Devenez partenaire</a></li>
+                            <li><a href="#">Carrières</a></li>
+                            <li><a href="#">Devenir affilié</a></li>
+                            <li><a href="#">Les associations</a></li>
+                            <li><a href="#">faites de la publicité avec nous</a></li>
+                            <li><a href="#">Régime de retraite</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.rt-single-widget -->
+                </div>
+                <!-- /.col-lg-3-->
+                <div class="col-lg-3 col-md-6">
+                    <div class="rt-single-widget wow fade-in-bottom" data-wow-duration="2s">
+                        <h3 class="rt-footer-title">
+                            Mon compte
+                        </h3>
+                        <ul class="rt-usefulllinks">
+
+                            <li><a href="#">Gérer votre compte</a></li>
+                            <li><a href="#">creer votre propre portefeuille</a></li>
+                            <li><a href="#">Statut de vos commandes</a></li>
+                            <li><a href="{% url 'howork' %}">Guide de réservation</a></li>
+                            <li><a href="#">Guide d'assurance voyage et de sécurité</a></li>
+                        </ul>
+                        <!-- /.rt-usefulllinks -->
+                    </div>
+                    <!-- end single widget -->
+                </div>
+                <!-- /.col-lg-3-->
+                <div class="col-lg-3 col-md-6">
+                    <div class="rt-single-widget wow fade-in-bottom" data-wow-duration="2.5s">
+                        <h3 class="rt-footer-title">
+                            Planifiez votre voyage
+                        </h3>
+                        <ul class="rt-usefulllinks">
+                            <li><a href="#">Offres spéciales</a></li>
+                            <li><a href="#">Forfaits touristiques</a></li>
+                            <li><a href="#">Hébergement</a></li>
+                            <li><a href="#">Transportation</a></li>
+                        </ul>
+                        <!-- /.rt-usefulllinks -->
+                    </div>
+                    <!-- end single widget -->
+                </div>
+                <!-- /.col-lg-3-->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.footer-top -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center text-lg-left">
+                    <div class="copy-text wow fade-in-bottom" data-wow-duration="1s">
+                        Copyright © 2020 Tous les droits sont réservés <b>BusHaiti</b> par <a href="https://www.doctypecoders.com/" target="_blank">Doctype_coders</a>
+                    </div>
+                    <!-- /.copy-text -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6 text-center text-lg-right">
+                    <div class="rt-footer-social wow fade-in-bottom" data-wow-duration="1.5s">
+                        <ul>
+                            <li>
+                                <a href="#"><img src="{% static 'bis/images/brands/card-1.png' %}" alt="cardimage" draggable="false"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{% static 'bis/images/brands/card-2.png' %}" alt="cardimage" draggable="false"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{% static 'bis/images/brands/card-3.png' %}" alt="cardimage" draggable="false"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{% static 'bis/images/brands/card-4.png' %}" alt="cardimage" draggable="false"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{% static 'bis/images/brands/card-5.png' %}" alt="cardimage" draggable="false"></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- /.rt-footer-social -->
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.footer-bottom -->
+</section>
+<!--================ End footer Area  =================-->

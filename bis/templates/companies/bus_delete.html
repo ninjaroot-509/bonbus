@@ -1,0 +1,23 @@
+{% extends 'companies/base.html' %} {% block head_title %}BusHaiti | Suppressions bus {% endblock %} {% block head_meta %} BusHaiti, plus simple, plus rapide {% endblock %}
+{% load static %}
+{% block content %}
+<br><br>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+            <div class="card-body">
+                <h5 class="card-title text-center"><b>Supprimer le bus "{{object.name}}"</b></h5>
+                <p class="text-center">Voulez-vous vraiment supprimer ce bus?</p><br>
+                <form class="form-signin">
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-danger btn-block text-uppercase" type="submit">Oui, supprimer</button><br><br>
+                        <a class="btn btn-lg btn-secondary btn-block text-uppercase" href="javascript:history.go(-1)">Annuler</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+     </div>
+    </div>
+</div>
+{% endblock content %}

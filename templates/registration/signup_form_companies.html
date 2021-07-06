@@ -1,0 +1,111 @@
+{% extends 'bis/base.html' %} {% block title %}BusHaiti | Inscrivez Vous {% endblock %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+
+<div class="rt-breadcump rt-breadcump-height">
+    <div class="rt-page-bg rtbgprefix-cover" style="background-image: url({% static 'bis/images/backgrounds/bredcump.png' %})">
+    </div><!-- /.rt-page-bg -->
+    <div class="container">
+        <div class="row rt-breadcump-height">
+            <div class="col-12">
+                <div class="breadcrumbs-content">
+                    <h3>Inscrivez Vous</h3>
+                    <div class="breadcrumbs">
+                        <span class="divider"><i class="icofont-home"></i></span>
+                        <a href="/" title="Home">Acceuil</a>
+                        <span class="divider"><i class="icofont-simple-right"></i></span>
+                        Inscrivez Vous - compagnie
+
+                    </div><!-- /.breadcrumbs -->
+                </div><!-- /.breadcrumbs-content -->
+            </div><!-- /.col-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div><!-- /.rt-bredcump -->
+
+
+<section class="contact-area">
+    <!--<div class="rt-design-elmnts rtbgprefix-contain" style="background-image: url({% static 'bis/images/all-img/abt_vec_3.png' %})">-->
+
+    </div><!-- /.rt-design-elmnts -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+                    <h2 class="rt-section-title">
+                        <span>Inscrivez Vous en tant que compagnie</span>
+                        
+                        <!--Entrer en contact-->
+                    </h2><!-- /.rt-section-title -->
+                    <p>Inscrivez-vous pour avoir plus acces sur les choses qui vous intéressent, si vous êtes dej&agrave; membres <a href="{% url 'login' %}"><b>Connecter vous?</b></a></p>
+                    <div class="section-title-spacer"></div><!-- /.section-title-spacer -->
+
+                 <div class="comment-respond">
+                    <form action="." method="post" class="rt-form rt-line-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ next }}">
+                        <p class="com">
+                            <label for="id_username" class=" requiredField">Nom du Compagnie<span class="asteriskField">*</span> </label> 
+                            <input type="text" name="username" id="id_username" placeholder="Nom du compagnie" class="form-control" required>
+                        </p>
+                        <p class="com">
+                            <label for="id_email" class=" requiredField">Adresse électronique<span class="asteriskField">*</span> </label> 
+                            <input type="email" name="email" id="id_email" placeholder="Adresse électronique" class="form-control" required>
+                        </p>
+                        <p class="com">
+                            <label for="id_password1" class=" requiredField">Mot de passe<span class="asteriskField">*</span> </label> 
+                            <input type="password" name="password1" id="id_password1" placeholder="Mot de passe" class="form-control" required>
+                        </p>
+                        <p class="com">
+                            <label for="id_password2" class=" requiredField">Comfirmation du mot de passe<span class="asteriskField">*</span> </label> 
+                            <input type="password" name="password2" id="id_password2" placeholder="Comfirmation du mot de passe" class="form-control" required>
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <h2 class="rt-section-title">
+                        <span>Informations importantes</span>
+                            <!--Entrer en contact-->
+                        </h2><!-- /.rt-section-title -->
+                        <br>
+                        <p class="com">
+                            <label for="id_ville" class=" requiredField">Le nom de votre Ville<span class="asteriskField">*</span> </label> 
+                            <input type="text" name="ville" id="id_ville" placeholder="Votre Ville" class="form-control" required>
+                        </p>
+                        <p class="com">
+                            <label for="id_addresse" class=" requiredField">Entrez votre Addresse<span class="asteriskField">*</span> </label> 
+                            <input type="text" name="addresse" id="id_addresse" placeholder="Votre Addresse" class="form-control" required>
+                        </p>
+                        <p class="com">
+                            <label for="id_telephone" class=" requiredField">Votre numero de telephone<span class="asteriskField">*</span> </label> 
+                            <input type="tel" name="telephone" id="id_telephone" maxlength="8" placeholder="Numero telephone" class="form-control" required>
+                        </p>
+                        <p class="com">
+                            <label for="id_q1" class=" requiredField">Comment avez-vous connu BusHaiti?<span class="asteriskField">*</span> </label> 
+                            <input type="text" name="q1" id="id_q1" placeholder="Ecrire ici!!" class="form-control" required>
+                        </p>
+                        <p class="com">
+                            <label for="id_q2" class=" requiredField">Quelles sont vos motivations pour adhérer à BusHaiti?<span class="asteriskField">*</span> </label> 
+                            <input type="text" name="q2" id="id_q2" placeholder="Ecrire ici!!" class="form-control" required>
+                        </p>
+                        <p class="com">
+                            <label for="id_q3" class=" requiredField">Si vous avez des idées de projets, de contribution pour/dans l'association?<span class="asteriskField">*</span> </label> 
+                            <textarea placeholder="Ecrire ici!!" name="q3" id="id_q3" class="form-control" required></textarea>
+                        </p>
+                        <div class="form-check">
+                            <label class="form-check-label" for="gridCheck222">
+                                En cliquant sur «Envoyer», vous acceptez nos <a href="#">conditions d'utilisation</a> et notre <a href="#">politique de confidentialité</a>
+                            </label>
+                        </div>
+                        <br>
+                        <div class="float-left">
+                            <input type="submit" value="Envoyer" class="rt-btn rt-gradient text-uppercase rt-rounded">
+                        </div>
+                    </form>
+                    </div>
+            </div><!-- /.col-lg-9 -->
+        </div><!-- /.row -->
+        <div class="section-title-spacer"></div><!-- /.section-title-spacer -->
+    </div><!-- /.container -->
+</section>
+
+
+
+{% endblock %}

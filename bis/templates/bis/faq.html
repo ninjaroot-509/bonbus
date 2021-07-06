@@ -1,0 +1,191 @@
+{% extends 'bis/base.html' %} {% block title %}BusHaiti | FAQ {% endblock %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+
+<div class="rt-breadcump rt-breadcump-height">
+    <div class="rt-page-bg rtbgprefix-cover" style="background-image: url({% static 'bis/images/backgrounds/bredcump.png' %})">
+    </div><!-- /.rt-page-bg -->
+    <div class="container">
+        <div class="row rt-breadcump-height">
+            <div class="col-12">
+                <div class="breadcrumbs-content">
+                    <h3>Centre d'aide</h3>
+                    <div class="breadcrumbs">
+                        <span class="divider"><i class="icofont-home"></i></span>
+                        <a href="/" title="Home">Acceuil</a>
+                        <span class="divider"><i class="icofont-simple-right"></i></span>
+                        FAQ
+
+                    </div><!-- /.breadcrumbs -->
+                </div><!-- /.breadcrumbs-content -->
+            </div><!-- /.col-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div><!-- /.rt-bredcump -->
+
+
+<!-- 
+    ========works start========
+ -->
+<section class="works-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 text-center mx-auto text-center">
+                <div class="rt-section-title-wrapper">
+                    <h2 class="rt-section-title">
+                        <span>Bienvenue à</span>
+                        Notre centre d'aide
+                    </h2><!-- /.rt-section-title -->
+                    <p>Nous sommes là pour vous aider 24/7 Consultez nos guides d'aide pour obtenir des informations et des réponses.</p>
+                </div><!-- /.rt-section-title-wrapper- -->
+            </div><!-- /.col-lg-12 -->
+        </div><!-- /.row -->
+        <div class="section-title-spacer"></div><!-- /.section-title-spacer -->
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mx-auto text-center">
+                <div class="services-box-2 wow fade-in-bottom">
+                    <div class="services-thumb">
+                        <img src="{% static 'bis/images/all-img/help-icon-1.png' %}" alt="service-icons" draggable="false">
+                    </div><!-- /.services-thumb -->
+                    <h4>Aperçu du compte</h4>
+                </div><!-- /.services-box-2 -->
+            </div><!-- /.col-lg-3 -->
+            <div class="col-lg-3 col-md-6 mx-auto text-center">
+                <div class="services-box-2 wow fade-in-bottom" data-wow-duration="1s">
+                    <div class="services-thumb">
+                        <img src="{% static 'bis/images/all-img/help-icon-2.png' %}" alt="service-icons" draggable="false">
+                    </div><!-- /.services-thumb -->
+                    <h4>FAQ</h4>
+                </div><!-- /.services-box-2 -->
+            </div><!-- /.col-lg-3 -->
+            <div class="col-lg-3 col-md-6 mx-auto text-center">
+                <div class="services-box-2 wow fade-in-bottom" data-wow-duration="1.5s">
+                    <div class="services-thumb">
+                        <img src="{% static 'bis/images/all-img/help-icon-3.png' %}" alt="service-icons" draggable="false">
+                    </div><!-- /.services-thumb -->
+                    <h4>Contactez Nous</h4>
+                </div><!-- /.services-box-2 -->
+            </div><!-- /.col-lg-3 -->
+            <div class="col-lg-3 col-md-6 mx-auto text-center">
+                <div class="services-box-2 wow fade-in-bottom" data-wow-duration="2s">
+                    <div class="services-thumb">
+                        <img src="{% static 'bis/images/all-img/help-icon-4.png' %}" alt="service-icons" draggable="false">
+                    </div><!-- /.services-thumb -->
+                    <h4>Rencontrer l'équipe</h4>
+                </div><!-- /.services-box-2 -->
+            </div><!-- /.col-lg-3 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section>
+<!-- 
+    ========works start========
+ -->
+
+<div class="spacer-top"></div><!-- /.spacer-bottom -->
+<section class="about-area2">
+    <div class="rt-design-elmnts  rtbgprefix-contain"
+        style="background-image: url({% static 'bis/images/all-img/faq-img.png' %})">
+    </div><!-- /.rt-design-elmnts -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div id="accordion">
+    <div class="card wow fade-in-bottom">
+        <div class="card-header card-primary" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                    aria-controls="collapseOne">
+                    <span class="d-inline-block f-size-18 rt-hw-40 bg-gradient-primary rt-circle rt-mr-10 text-center text-white"><i class="icofont-question"></i></span>Quelles sont les raisons possibles du refus de ma carte de crédit?
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                Vous êtes invités à effectuer des dépôts ou des paiements partiels pour votre réservation, mais tant qu'Emigr n'aura pas reçu le paiement intégral de votre réservation, vos places ne seront pas garanties. Veuillez effectuer votre paiement complet dès que possible.
+            </div>
+        </div>
+    </div><!-- end single accrodain -->
+    <div class="card wow fade-in-bottom" data-wow-duration="1.0s">
+        <div class="card-header card-primary" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="false" aria-controls="collapseTwo">
+                <span class="d-inline-block f-size-18 rt-hw-40 bg-gradient-primary rt-circle rt-mr-10 text-center text-white"><i
+                        class="icofont-question"></i></span> Combien de temps à l'avance devons-nous réserver et effectuer le paiement intégral?
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                Landing Page Builder est une plate-forme hébergée alimentée par le constructeur Brizy visant à vous connecter avec des clients potentiels, à collecter des prospects et à conclure des ventes grâce à une expérience plus rationalisée.
+            </div>
+        </div>
+    </div><!-- end single accrodain -->
+    <div class="card wow fade-in-bottom" data-wow-duration="1.5s">
+        <div class="card-header card-primary" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="false" aria-controls="collapseThree">
+                <span class="d-inline-block f-size-18 rt-hw-40 bg-gradient-primary rt-circle rt-mr-10 text-center text-white"><i
+                        class="icofont-question"></i></span> Combien de temps à l'avance devons-nous réserver et effectuer le paiement intégral?
+                </button>
+            </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+                Landing Page Builder est une plate-forme hébergée alimentée par le constructeur Brizy visant à vous connecter avec des clients potentiels, à collecter des prospects et à conclure des ventes grâce à une expérience plus rationalisée.
+            </div>
+        </div>
+    </div><!-- end single accrodian -->
+    <div class="card wow fade-in-bottom" data-wow-duration="1.5s">
+        <div class="card-header card-primary" id="headingThree2">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree2"
+                    aria-expanded="false" aria-controls="collapseThree2">
+                <span class="d-inline-block f-size-18 rt-hw-40 bg-gradient-primary rt-circle rt-mr-10 text-center text-white"><i
+                        class="icofont-question"></i></span> Comment rechercher un hôtel dans une certaine zone à l'aide de l'outil de carte?
+                </button>
+            </h5>
+        </div>
+        <div id="collapseThree2" class="collapse" aria-labelledby="headingThree2" data-parent="#accordion">
+            <div class="card-body">
+                Landing Page Builder est une plate-forme hébergée alimentée par le constructeur Brizy visant à vous connecter avec des clients potentiels, à collecter des prospects et à conclure des ventes grâce à une expérience plus rationalisée.
+            </div>
+        </div>
+    </div><!-- end single accrodian -->
+    <div class="card wow fade-in-bottom" data-wow-duration="1.5s">
+        <div class="card-header card-primary" id="headingThree21">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree21"
+                    aria-expanded="false" aria-controls="collapseThree21">
+                <span class="d-inline-block f-size-18 rt-hw-40 bg-gradient-primary rt-circle rt-mr-10 text-center text-white"><i
+                        class="icofont-question"></i></span> Comment puis-je faire une réservation?
+                </button>
+            </h5>
+        </div>
+        <div id="collapseThree21" class="collapse" aria-labelledby="headingThree21" data-parent="#accordion">
+            <div class="card-body">
+                Landing Page Builder est une plate-forme hébergée alimentée par le constructeur Brizy visant à vous connecter avec des clients potentiels, à collecter des prospects et à conclure des ventes grâce à une expérience plus rationalisée.
+            </div>
+        </div>
+    </div><!-- end single accrodian -->
+
+</div><!-- end accrodian group -->
+
+
+            </div><!-- /.col-lg-7 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section>
+
+<div class="spacer-bottom"></div><!-- /.spacer-bottom -->
+<section class="caltoaction-4 rt-dim-light rt-pt-100 rt-pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h4 class="f-size-40 rt-semibold rt-mb-40 f-size-md-32 f-size-xs-26">Vous n'avez pas trouvé ce que vous cherchiez?</h4>
+                <a href="{% url 'contact' %}" class="rt-btn rt-gradient rt-rounded rt-sm text-uppercase">Soumettez votre demande</a>
+            </div><!-- /.col-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section>
+{% endblock %}

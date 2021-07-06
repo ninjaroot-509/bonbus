@@ -1,0 +1,249 @@
+{% extends 'bis/base.html' %} {% block title %}BusHaiti | Liste Bus {% endblock %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+
+<div class="rt-breadcump rt-breadcump-height with-logn-height">
+    <div class="rt-page-bg rtbgprefix-cover" style="background-image: url({% static 'bis/images/backgrounds/bredcump.png' %})">
+    </div>
+    <!-- /.rt-page-bg -->
+    <div class="container">
+        <div class="row rt-breadcump-height with-logn-height">
+            <div class="col-12">
+                <div class="breadcrumbs-content">
+                    <h3>Listes Bus</h3>
+                    <div class="breadcrumbs">
+                        <span class="divider"><i class="icofont-home"></i></span>
+                        <a href="#" title="Acceuil">Acceuil</a>
+                        <span class="divider"><i class="icofont-simple-right"></i></span> Listes Bus
+
+                    </div>
+                    <!-- /.breadcrumbs -->
+                </div>
+                <!-- /.breadcrumbs-content -->
+            </div>
+            <!-- /.col-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+    <div class="bredcump-search">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="rt-banner-searchbox flight-search wow fade-in-bottom" data-wow-duration="1s" data-wow-delay="1s">
+                        <div class="tab-content" id="myTabContent">
+
+                            <div class="tab-pane  show active" id="rt-item_a_four" role="tabpanel" aria-labelledby="rt-item_a_four">
+                                <form action="." method="get">
+                                    <div class="rt-input-group">
+                                        <div class="single-input  col-rt-in-3">
+                                            <input type="text" class="form-control" name="source" value="{{source_r}}" id="search_input" placeholder="Votre position actuel..." />
+                                        </div>
+                                        <!-- /.single-input -->
+                                        <div class="single-input  col-rt-in-3">
+                                            <input type="text" class="form-control" name="destination" value="{{dest_r}}" id="search_input2" placeholder="Votre destination..." />
+                                        </div>
+                                        
+                                        <div class="single-input  col-rt-in-3">
+                                            <input type="text" class="form-control rt-date-picker has-icon" name="date_depart" value="{{date_r}}" placeholder="Date de depart">
+                                            <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
+                                        </div>
+                                        
+                                       <!-- /.single-input -->
+                                        <div class="single-input  col-rt-in-3">
+                                            <button type="submit" style="width: 100%"><i class="icofont-search"></i></button>
+                                        </div>
+                                        <!-- /.single-input -->
+                                    </div>
+                                    <!-- /.rt-input-group -->
+                                </form>
+                                <!-- ./ form -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.rt-banner-searchbox -->
+
+
+                    <!-- <ul class="nav serachnavs wow fade-in-bottom" id="rtMultiTab" role="tablist" data-wow-duration="1.5s" data-wow-delay="1.5s">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link active" id="third-tab" data-target="#rt-item_b_thrid" data-secondary="#rt-item_a_third" data-toggle="tab" href="#third" role="tab" aria-controls="third-tab" aria-selected="false">
+                                <i class="icofont-car-alt-4"></i>
+                                <span>Bus</span>
+                            </a>
+                        </li>
+                    </ul> -->
+
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+</div>
+<!-- /.rt-bredcump -->
+
+
+
+
+
+
+
+<div class="spacer-bottom"></div>
+<!-- /.spacer-bottom -->
+<section class="content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="tab-content" id="rt-BototmTab">
+                    <div class="tab-pane show active fade-in-bottom" id="rt-item_b_thrid" role="tabpanel" aria-labelledby="rt-item_b_thrid">
+                        <div class="row">
+                            <!-- /.col-lg-3 -->
+                            <div class="col-lg-12">
+                                <div class="flight-list-box rt-mb-30">
+                                    <form action="." method="get" class="row">
+                                        <div class="col-lg-3 col-md-6 mb-3 mb-lg-0">
+                                            <button class="rt-btn pill rt-sm rt-gradient d-block">Filtrer</button>
+                                        </div>
+                                        <!-- /.col-lg-4 -->
+                                        <div class="col-lg-3 col-md-6 mb-3 mb-lg-0">
+                                            <select class="rt-selectactive banner-select" style="width: 100%">
+                                                <option>Prix</option>
+                                                <option value="500">500</option>
+                                                <option value="1000">1000</option>
+                                                <option value="1150">1150</option>
+                                                <option value="1200">1200</option>
+                                            </select>
+                                        </div>
+                                        <!-- /.col-lg-3 -->
+                                        <div class="col-lg-3 rt-input-group mini col-md-6  mb-3 mb-md-0">
+                                            <input type="text" class="form-control" name="destination" value="{{dest_r}}" id="search_input3" placeholder="Votre destination..." />
+                                        </div>
+                                        <!-- /.col-lg-3 -->
+                                        <div class="col-lg-3 col-md-6 mb-3 mb-lg-0">
+                                            <select class="rt-selectactive banner-select" style="width: 100%">
+                                                <option>Heures</option>
+                                                <option value="500">7h AM</option>
+                                                <option value="1000">10h AM</option>
+                                                <option value="1150">11h AM</option>
+                                                <option value="1200">12h PM</option>
+                                                <option value="1200">2h PM</option>
+                                                <option value="1200">4h PM</option>
+                                            </select>
+                                        </div>
+                                        <!-- /.col-lg-3 -->
+                                    </form>
+                                </div>
+                                <!-- /.flight-list-box -->
+                                {% for bus in bus_list %}
+                                <div class="flight-list-box rt-mb-30">
+                                    <div class="top-content d-flex flex-md-row flex-column justify-content-lg-between">
+                                        <div class="car-thumb mr-4 mr-lg-0 mb-5 mb-md-0">
+                                            <img src="{{bus.image.url}}" alt="car image" class="rt-border-primary2" style="display: block;margin-left: auto;margin-right: auto;width: 156px;height: 118px;">
+                                        </div>
+                                        <!-- /.car-thumb -->
+                                        <div class="economy mb-5 mb-md-0">
+                                            <h5 class="f-size-30 rt-medium" style="color: #ff6600">{{bus.author.username}}</h5>
+                                            <span class="d-block f-size-13 text-555">{{bus.name}}</span>
+                                            <span class="d-block text-444 rt-mb-5"> <span><i class="icofont-bus"></i> 100% Sécurisé</span></span>
+                                            <span class="badge rt-gradinet-badge pill rt-mr-10">{{bus.nombre_place}} <small>Place{% if bus.nombre_place > 1 %}s{% endif %} disponible</small></span>
+                                            <span class="primary-color">{% if bus.nombre_place < 10 %}Reservation Presque terminé{% elif bus.nombre_place > 10 %} Excellent {% endif %}</span>
+                                            <!--<span class="f-size-12 text-878">( 86 Reviews )</span>-->
+                                        </div>
+                                        <!-- /.economy -->
+                                        <div class="ck-list">
+                                            <ul class="rt-list">
+                                                <li class="d-block">
+                                                    <span class="primary-color rt-mr-3"><i class="icofont-check"></i></span> Sièges confort ergonomiques
+                                                </li>
+                                                <li class="d-block">
+                                                    <span class="primary-color rt-mr-3"><i class="icofont-check"></i></span> Dépose-bagages spacieux
+                                                </li>
+                                                <li class="d-block">
+                                                    <span class="primary-color rt-mr-3"><i class="icofont-check"></i></span> 100% Sécurisé
+                                                </li>
+                                                <li class="d-block">
+                                                    <span class="primary-color rt-mr-3"><i class="icofont-check"></i></span> Confirmation Avec carte identification
+                                                </li>
+                                            </ul>
+                                            <!-- /.rt-list -->
+                                        </div>
+                                        <!-- /.ck-list -->
+                                        <div class="price-mant text-lg-right">
+                                            <span class="d-block f-size-29 text-878" style="color: #ff6600">{{bus.time}}</span>
+                                            <span class="d-block text-primary f-size-24 rt-semiblod title-font">{{bus.prix}} Gourdes</span>
+                                            {% if bus.is_taxi == False %}
+                                            {% if bus.date_depart >= now %}
+                                            <a href="{{bus.get_absolute_url}}" class="rt-btn rt-gradient pill rt-sm3 text-uppercase rt-mt-10">Visionner</a>
+                                            {% else %}
+                                            <a class="rt-btn pill rt-sm3 text-uppercase rt-mt-10" style="background-color: #CACACA;color: #fff;">Indisponible</a>
+                                            {% endif %}
+                                            {% else %}
+                                            <a href="{{bus.get_absolute_url}}" class="rt-btn rt-gradient pill rt-sm3 text-uppercase rt-mt-10">Visionner</a>
+                                            {% endif %}
+                                        </div>
+                                        <!-- /.price-mant -->
+                                    </div>
+                                    <!-- /.top-content -->
+                                    <div class="bottom-content row">
+                                        <div class="single-discribe col-md-4">
+                                            <h3 class="f-size-16 rt-medium text-424 rt-mb-10">Depart</h3>
+                                            <p class="f-size-14 line-height-24 text-555">
+                                                {{bus.source}}
+                                            </p>
+                                            <!-- <p class="f-size-14 line-height-24 text-555 rt-mb-0">
+                                                0.51 mi from New <br> York city center
+                                            </p> -->
+                                        </div>
+                                        <!-- /.single-discribe -->
+                                        <div class="single-discribe col-md-4">
+                                            <h3 class="f-size-16 rt-medium text-424 rt-mb-10">Destination</h3>
+                                            <p class="f-size-14 line-height-24 text-555">
+                                                {{bus.destination}}
+                                            </p>
+                                            <!-- <p class="f-size-14 line-height-24 text-555 rt-mb-0">
+                                                0.51 mi from New <br> York city center
+                                            </p> -->
+                                        </div>
+                                        <!-- /.single-discribe -->
+                                        <div class="single-discribe col-md-4">
+                                            <h3 class="f-size-16 rt-medium text-424 rt-mb-10">Description</h3>
+                                            <p class="f-size-14 line-height-24 text-555">
+                                                {{bus.description}}
+                                            </p>
+                                            <!-- /.rt-list -->
+                                        </div>
+                                        <!-- /.single-discribe -->
+                                    </div>
+                                    <!-- /.bottom-content -->
+                                </div>
+                                {% endfor %}
+                                <!-- /.flight-box -->
+
+
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination  rt-paganation justify-content-center">
+                                        <li class="page-item"><a class="page-link" href="#"><i class="icofont-rounded-double-left"></i></a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">02</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">03</a></li>
+                                        <li class="page-item"><a class="page-link" href="#"><i class="icofont-rounded-double-right"></i></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- /.col-lg-9 -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+
+{% endblock %}

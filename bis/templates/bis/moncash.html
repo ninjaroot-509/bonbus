@@ -1,0 +1,16 @@
+{% extends 'bis/base.html' %}
+{% block content %}
+
+<div class="container">
+        <div class="row">
+            <div class="col-sm-6 mx-auto" style="margin-top: 70px">
+                <form method="post" action="https://moncashbutton.digicelgroup.com/Moncash-middleware/Checkout/U0VKaVpGQmFWMVpXU2tFOSBiMmt3UW5wdFYyNUVjamRFVURKbVFXYzRha1pxZHowOQ==/" >
+                    <input type="hidden" name="amount" value="22.0"/>
+                    <input type="hidden" name="orderId" value="test moncash"/>
+                    <input type="image" name="ap_image" src="https://moncashbutton.digicelgroup.com/Moncash-middleware/resources/assets/images/MC_button.png"/>
+                </form>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}            

@@ -1,0 +1,1 @@
+from bonbis.wsgi import application

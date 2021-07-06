@@ -1,0 +1,94 @@
+{% extends 'companies/base.html' %} {% block head_title %}BonBus | mes Bus {% endblock %} 
+{% block head_meta %} bonbus, plus simple, plus rapide {% endblock %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+
+<div class="main-panel" style="width: 100%;">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Lis bus mwen yo</h4>
+                        <table class="table table-bordered table-responsive">
+                            <thead>
+                                <tr>
+                                    <th title="L'id bus pour changer le nombre de tickets"> ID Bus </th>
+                                    <th> Images </th>
+                                    <th title=""> Bus </th>
+                                    <th title="Nombres de tickets disponibles"> Place disponible </th>
+                                    <th title="Sa Source"> Source </th>
+                                    <th title="Son Destination"> Destination </th>
+                                    <th> Dates et Heures de depart </th>
+                                    <th> Actions </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for bus in items %}
+                                <tr>
+                                    <td>{{bus.id}}</td>
+                                    <td><img src="{{bus.image.url}}" alt="image"/></td>
+                                    <td>{{bus.name}}</td>
+                                    <td>{{ bus.nombre_place }}</td>
+                                    <td>{{ bus.source}}</td>
+                                    <td>{{ bus.destination}}</td>
+                                    {% if bus.is_taxi == False %}
+                                    <td> {{bus.date_depart}} </td>
+                                    {% else %}
+                                    <td> disponible 24/7 </td>
+                                    {% endif %}
+                                    <td>
+                                        <div class="col-sm-6 col-md-4 col-lg-3">
+                                            <a href="{% url 'companies:bus_update' pk=bus.pk %}" style="font-size: 30px"><i class="mdi mdi-pencil"></i></a>
+                                            <a href="{% url 'companies:bus_delete' pk=bus.pk %}" style="color: red;font-size: 30px"><i class="mdi mdi-delete"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+             <div class="col-md-12 d-flex align-items-stretch grid-margin">
+                <div class="row flex-grow">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Editer Nombre de tickets disponibles</h4>
+                                <!-- <p class="card-description"> Basic form layout </p> -->
+                                <form class="forms-sample" action="{% url 'companies:n_places' %}" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend bg-primary border-primary">
+                                                <span class="input-group-text bg-transparent">
+                                                  <i class="mdi mdi-shield-outline text-white"></i>
+                                                </span>
+                                            </div>
+                                            <input type="text" class="form-control" name="bus_id" id="id_bus_id" required placeholder="Entrer L'Id Bus" aria-label="Bus Id">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend bg-primary border-primary">
+                                                <span class="input-group-text bg-transparent">
+                                                  <i class="mdi mdi-menu text-white"></i>
+                                                </span>
+                                            </div>
+                                            <input type="number" class="form-control" name="places" id="id_places" required placeholder="Entrer la quatiter restante" aria-label="Quantiter restante">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-success mr-2">Sauvegarder</button>
+                                    <a href="/"><button class="btn btn-light">Annuler</button></a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

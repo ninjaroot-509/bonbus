@@ -1,0 +1,58 @@
+{% extends 'companies/base.html' %} {% block head_title %}BusHaiti | Reservations {% endblock %} 
+{% block head_meta %} bonbus, plus simple, plus rapide {% endblock %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+
+<div class="main-panel" style="width: 100%;">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Tout mes reservations</h4>
+                        <table class="table table-striped table-responsive">
+                            <thead>
+                                <tr>
+                                    <th> Utilisations </th>
+                                    <th> Images </th>
+                                    <th title="">Nom </th>
+                                    <th title=""> Prenom </th>
+                                    <th title=""> Type </th>
+                                    <th title=""> Identifications </th>
+                                    <th title="Nombres de tickets"> Nbres_Tickets </th>
+                                    <th title="Sa Source"> Source </th>
+                                    <th title="Son Destination"> Destination </th>
+                                    <th title=""> payer le </th>
+                                    <th title="Son Code"> Code transaction </th>
+                                    <th> Dates et Heures de depart </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for reservation in items %}
+                                <tr>
+                                    {% if reservation.utiliser == True %}
+                                    <td><a href="{% url 'companies:uncheck' reservation.code %}" style="font-size: 30px"><i class="mdi mdi-check"></i></a></td>
+                                    {% else %}
+                                    <td><a href="{% url 'companies:check' reservation.code %}" style="font-size: 30px; color:grey"><i class="mdi mdi-check"></i></a></td>
+                                    {% endif %}
+                                    <td><img src="{{reservation.image.url}}" alt="image" /></td>
+                                    <td>{{reservation.nom}}</td>
+                                    <td><a>{{reservation.prenom}}</a></td>
+                                    <td>{{reservation.get_id_type_display}}</td>
+                                    <td>{{reservation.id_number}}</td>
+                                    <td>{{reservation.quantite}}</td>
+                                    <td>{{ reservation.source}}</td>
+                                    <td>{{ reservation.destination}}</td>
+                                    <td>{{reservation.date}}</td>
+                                    <td><b>{{ reservation.code}}</b></td>
+                                    <td> {{reservation.date_depart}} &agrave; {{reservation.time}} </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

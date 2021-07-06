@@ -1,0 +1,175 @@
+{% load static %}
+<!--================Header Area =================-->
+<!--<div class="rt-preloder">-->
+<!--    <div class="preloder-box">-->
+<!--        <img src="{% static 'bis/images/all-img/preloder.svg' %}" alt="preloder image" draggable="false">-->
+<!--    </div>-->
+    <!-- /.preloder-box -->
+<!--</div>-->
+<!-- /.rt-preloder -->
+
+<header class="rt-site-header  rt-fixed-top black-menu">
+    <div class="top-header d-none d-md-block">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <ul class="text-center text-md-left top-message">
+                        <li> <i class="icofont-headphone-alt"></i>Soutien</li>
+                        <li><a href="mailto:info@bonbus.com "><i class="icofont-email"></i>info@bushaiti.com</a></li>
+                    </ul>
+                </div>
+                <!-- end top header single -->
+                <div class="col-md-6">
+                    <ul class="text-center text-md-right top-social">
+                        <li><a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-americas"></i>Francais</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Francais</a>
+                                <a class="dropdown-item" href="#">Creole</a>
+                            </div>
+                        </li>
+                        {% if request.user.is_authenticated %}
+                        <!-- <li><a href="#"><i class="fas fa-briefcase"></i>Mon Compte</a></li> -->
+                        <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Deconnecter</a></li>
+                        {% else %}
+                        <li><a href="#" data-target="#rtmodal-1" data-toggle="modal"><i class="far fa-user-circle"></i>Connecter | S'inscrire</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <!-- end top header single -->
+            </div>
+        </div>
+    </div>
+    <!-- end top header -->
+
+
+    <div class="main-header rt-sticky">
+        <nav class="navbar">
+            <div class="container">
+                <a href="/" class="brand-logo"><img src="{% static 'bis/images/logo/logo.png' %}" alt="" style="width:100px"></a>
+                <a href="/" class="sticky-logo"><img src="{% static 'bis/images/logo/logo.png' %}" alt="" style="width:80px"><b>BusHaiti</b></a>
+                <div class="ml-auto d-flex align-items-center">
+
+
+                    <div class="main-menu">
+                        <ul>
+                            <li class="current-menu-item"><a href="/">Acceuil</a></li>
+                            <li><a href="{% url 'passengers:reser' %}">Mes Billets</a></li>
+                            <li title="rechercher Bus"><a href="{% url 'passengers:search_bus' %}">Rechercher</a></li>
+                            <li><a href="{% url 'passengers:order-summary' %}">Mon Panier</a></li>
+                            <li><a href="{% url 'about' %}">A-propos</a></li>
+                            <li><a href="{% url 'faq' %}">FAQ</a></li>
+                            {% if request.user.is_authenticated %}
+                                <li><a href="{% url 'profile' %}"><i class="fas fa-briefcase"></i>Mon Compte</a></li>
+                            {% else %}
+                                <li><a href="#" data-target="#rtmodal-1" data-toggle="modal"><i class="far fa-user-circle"></i>Connecter | S'inscrire</a></li>
+                            {% endif %}
+
+                        </ul>
+                        <div class="mobile-menu">
+                            <div class="menu-click">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end main menu -->
+                    <div class="rt-nav-tolls d-flex align-items-center">
+                        <span class="d-md-inline d-none"><a href="{% url 'contact' %}" class="rt-btn rt-gradient2 rt-rounded text-uppercase rt-Bshadow-1">ContacteZ Nous</a></span>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- /.bootom-header -->
+
+</header>
+<!--================Header Area =================-->
+
+<!-- Modal -->
+<div class="modal fade" id="rtmodal-1" tabindex="-1" role="dialog" aria-labelledby="rtmodal-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered rt-lgoinmodal " role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="rt-modal-headr rt-mb-20 one">
+                    <img src="{% static 'bis/images/logo/Logo-icon.png' %}" alt="modal logo" draggable="false">
+                    <h4>Connectez-Vous sur BusHaiti?</h4>
+                    <p>Connectez-vous pour avoir plus acces sur les choses qui vous intéressent.</p>
+                </div>
+                <!-- /.rt-modal-headr -->
+                <div class="rt-modal-headr rt-mb-20 two">
+                    <img src="{% static 'bis/images/logo/Logo-icon.png' %}" alt="modal logo" draggable="false">
+                    <h4>Inscrivez-vous sur BusHaiti</h4>
+                    <p>Inscrivez-vous pour avoir plus acces sur les choses qui vous intéressent.</p>
+                </div>
+                <!-- /.rt-modal-headr -->
+                <div class="rt-modal-input one">
+                    <form action="{% url 'login' %}" method="post" class="rt-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ next }}">
+                        <input type="text" class="form-control pill rt-mb-15" name="username" autofocus required id="id_username" placeholder="Pseudonyme">
+                        <input type="password" class="form-control pill rt-mb-15" name="password" required id="id_password" placeholder="Password">
+                        <div class="form-group forgot-pass">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheckss">
+                                <label class="form-check-label" for="gridCheckss">
+                                     Se souvenir de moi
+                                </label>
+                            </div>
+                            <!-- ./orm-group -->
+                        </div>
+                        <input type="submit" class="rt-btn rt-gradient pill d-block text-uppercase" value="Connecter">
+                    </form>
+                    <div class="ac-register">
+                        <span>Je n'ai pas de compte? <a href="{% url 'signup' %}" class="open-creatac">S'inscrire maintenant <i class="icofont-double-right"></i></a></span>
+                    </div>
+                    <!-- /.ac-register -->
+                </div>
+                <!-- /.rt-modal-input -->
+                <div class="rt-modal-input two">
+                    <form action="{% url 'passenger_signup' %}" method="post" class="rt-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ next }}">
+                        <input type="text" class="form-control pill rt-mb-15" name="username" id="id_username" placeholder="Pseudonyme">
+                        <input type="password" name="password1" id="id_password1" class="form-control pill rt-mb-15" placeholder="Mot de passe">
+                        <input type="password" name="password2" id="id_password2" class="form-control pill rt-mb-15" placeholder="Comfirmez votre mot de passe">
+                        <div class="form-group forgot-pass">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck333">
+                                <label class="form-check-label" for="gridCheck333">
+                                    J'aimerais entendre parler de promotions, de nouveaux produits et bien plus encore!
+                                </label>
+                            </div>
+                            <!-- ./orm-group -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck222">
+                                <label class="form-check-label" for="gridCheck222">
+                                    En cliquant sur «S'inscrire», vous acceptez nos conditions d'utilisation et notre politique de confidentialité
+                                </label>
+                            </div>
+                            <!-- ./orm-group -->
+                        </div>
+                        <input type="submit" class="rt-btn rt-gradient pill d-block text-uppercase " value="S'inscrire">
+                    </form>
+                    <div class="ac-register">
+                        <span>Vous avez déjà un compte?<a href="#">Connecter <i class="icofont-double-right"></i></a></span>
+
+                    </div>
+                    <!-- /.ac-register -->
+                </div>
+                <!-- /.rt-modal-input -->
+                <div class="rt-modal-footer">
+                    <span>Ou</span>
+                    <h4>Inscrivez-vous avec les médias sociaux</h4>
+                    <ul class="rt-social rt-circle-style2">
+                        <li><a href="#"><i class="icofont-google-plus"></i></a></li>
+                        <li><a href="#"><i class="icofont-facebook"></i></a></li>
+                        <li><a href="#"><i class="icofont-twitter"></i></a></li>
+                    </ul>
+                </div>
+                <!-- /.rt-modal-footer -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+{% load static %}
+<!-- ==================Start Js Link===================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_C7iEW9aKj93585JSNgZgdsgR8kBihcI&callback=initMap"></script>-->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDbLTLv1dX4jqFRE3UvgeajaMI2yNs7IMw"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>-->
+<script>
+    var searchInput = 'search_input';
+
+    $(document).ready(function () {
+        var autocomplete;
+        autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+            types: ['geocode'],
+            componentRestrictions: {
+            country: "HT"
+        }
+        });
+        
+    });
+    
+    var searchInput2 = 'search_input2';
+
+    $(document).ready(function () {
+        var autocomplete;
+        autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput2)), {
+            types: ['geocode'],
+            componentRestrictions: {
+            country: "HT"
+        }
+        });
+        
+    });
+    
+    var searchInput3 = 'search_input2';
+
+    $(document).ready(function () {
+        var autocomplete;
+        autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput2)), {
+            types: ['geocode'],
+            componentRestrictions: {
+            country: "HT"
+        }
+        });
+        
+    });
+    
+</script>
+<script src="{% static 'bis/js/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'bis/js/popper.min.js' %}"></script>
+<script src="{% static 'bis/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'bis/js/moment.min.js' %}"></script>
+<script src="{% static 'bis/js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'bis/js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'bis/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'bis/js/instafeed.min.js' %}"></script>
+<script src="{% static 'bis/js/waypoints.min.js' %}"></script>
+<script src="{% static 'bis/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'bis/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'bis/js/jquery.scrollUp.min.js' %}"></script>
+<script src="{% static 'bis/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'bis/js/TweenMax.min.js' %}"></script>
+<script src="{% static 'bis/js/scrollax.min.js' %}"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyC_C7iEW9aKj93585JSNgZgdsgR8kBihcI"></script>-->
+<script src="{% static 'bis/js/wow.js' %}"></script>
+<script src="{% static 'bis/js/jquery.overlayScrollbars.min.js' %}"></script>
+<script src="{% static 'bis/js/jquery-ui.js' %}"></script>
+<script src="{% static 'bis/js/jquery.appear.js' %}"></script>
+<script src="{% static 'bis/js/select2.min.js' %}"></script>
+<script src="{% static 'bis/js/slick.min.js' %}"></script>
+<script src="{% static 'bis/js/slider-range.js' %}"></script>
+<script src="{% static 'bis/js/vivus.min.js' %}"></script>
+<script src="{% static 'bis/js/tippy.all.min.js' %}"></script>
+<script src="{% static 'bis/js/app.js' %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+
+<!-- ==================End Js Link===================== -->
